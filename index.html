@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldXplore</title>
+    <link rel="stylesheet"  type="text/css" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="tailus ui html-vite and tailwindcss 3.1 boilerplate" />
+</head>
+<body>
+    <nav>
+    <a href="index.html"><img src="WXLogo.svg" alt="World Xplore" width="100" height="100"></a>      
+    <button class="hamburger-menu">&#x2630;</button>
+<ul class="navItems">
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+        <a href="#">Package Tours</a>
+        <ul class="dropdown-content">
+            <li><a href="#">Shibuya Sky</a></li>
+            <li><a href="#">Harajuku</a></li>
+            <li><a href="#">Meiji Shrine</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Rediscover Singapore</a></li>
+    <li><a href="cruise.html">Cruises</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+</ul>
+
+    </nav>
+    
+    
+    <!-- <div class="video-container">
+        <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+            <source src="video/pexels_videos_2697636 (1440p).mp4" type="video/mp4">
+        </video>
+    </div> -->
+    <div class="background-container">
+        <div class="video-container">
+            <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
+                <source src="video/pexels_videos_2697636 (1440p).mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="image-container">
+            <!-- Place your image source here -->
+            <img src="images/shibuya.jpg" alt="Shibuya">
+        </div>
+    </div>
+    <section class="article-section">
+        <article>
+            <img src="images/shibuyasky.jpg" alt="Shibuya Sky" width="230" height="200">
+            <h2>Shibuya Sky</h2>
+            <p>This stunning observation deck gives a bird’s eye view of Shibuya and its surrounding area. 
+            As a Singaporean, you’ll appreciate the panoramic views reminiscent of our cityscape. 
+            Whether you visit during the day or at night, the Shibuya Sky view is breathtaking.</p>
+        </article>
+        <article>
+            <img src="images/harajuku.jpeg" alt="Harajuku" width="230" height="200">
+            <h2>Harajuku</h2>
+            <p>Known for its quirky fashion and vibrant street culture, Harajuku is a must-visit neighborhood in Shibuya. 
+            Explore the narrow streets filled with unique shops, cafes, and restaurants. 
+            As a Singaporean, you’ll appreciate Harajuku's eclectic fashion choices and trendy vibes.</p>
+        </article>
+        <article>
+            <img src="images/meijishrine.jpg" alt="Meiji Shrine" width="230" height="200">
+            <h2>Meiji Shrine</h2>
+            <p>Immerse yourself in Japan's rich history and spiritual traditions at the Meiji Shrine. 
+            This Shinto shrine, dedicated to Emperor Meiji and Empress Shoken, is a popular tourist destination. 
+            As a Singaporean, you’ll appreciate learning about Japanese culture and paying your respects at this sacred site.</p>
+        </article>
+    </section>
+
+    <footer>
+        <p><b>©WorldXplore</b></p>
+    </footer>
+
+
+<!-- jQuery CDN (if not already included) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Toggle navItems visibility on hamburger menu click
+        $(".hamburger-menu").click(function() {
+            $(".navItems").slideToggle(); // Toggle visibility of navItems
+        });
+
+        // Show navItems in one row on larger screens when the window is resized
+        $(window).resize(function() {
+            if ($(window).width() > 768) { // Check if the window size is larger than 768px
+                $(".navItems").css('display', ''); // Reset the style to default
+
+                // Check if the navItems are hidden (small screen) and change to flex display for larger screens
+                if ($(".navItems").css('display') === 'none') {
+                    $(".navItems").css('display', 'flex'); // Show navItems in one row for larger screens
+                }
+            }
+        });
+    });
+</script>
+    
+    
+    
+    
+
+</body>
+</html>
