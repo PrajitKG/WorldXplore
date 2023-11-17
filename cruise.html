@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldXplore</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <link rel="icon" type="image/png" href="https://rwcruises.com/assets/favicon.png">
+    <style>
+        /* ... (existing CSS rules) ... */
+    
+        .articles-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+    
+        .article {
+            flex: 0 0 calc(30% - 20px);
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid black;
+            background-color: white;
+            border-radius: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+    
+        .article img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    
+        .article-content {
+            margin-bottom: 15px;
+        }
+    
+        .article a {
+            display: block;
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+        .full-width-image {
+            position: relative;
+            width: 100%;
+            max-width: 100vw;
+            overflow: hidden;
+        }
+
+        .full-width-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        /* ... (existing CSS rules) ... */
+
+/* Add this media query for smaller screens */
+@media only screen and (max-width: 768px) {
+    .full-width-image img {
+        max-width: 100%; /* Make the image responsive */
+    }
+
+    .articles-container {
+        justify-content: center; /* Center articles on smaller screens */
+    }
+
+    .article {
+        flex: 0 0 80%; /* Set the width of articles to 80% on smaller screens */
+        margin: 10px 0; /* Add space between articles on smaller screens */
+    }
+}
+
+    
+    </style>
+    
+</head>
+
+<body>
+    <nav>
+        <a href="index.html"><img src="WXLogo.svg" alt="World Xplore" width="100" height="100"></a>
+        <button class="hamburger-menu">&#x2630;</button>
+        <ul class="navItems">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Package Tours</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Shibuya Sky</a></li>
+                    <li><a href="#">Harajuku</a></li>
+                    <li><a href="#">Meiji Shrine</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Rediscover Singapore</a></li>
+            <li><a href="cruise.html">Cruises</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="full-width-image">
+        <img src="images/cruise1.jpg" alt="Cruise">
+        <div class="image-text">
+            Cruises
+        </div>
+    </div>
+    </div>
+        <!-- Articles container -->
+        <div class="articles-container">
+            <!-- Article 1 -->
+            <div class="article">
+                <div class="article-content">
+                    <h2>Disney Cruise</h2>
+                    <img src="images/disney cruise.jpg" alt="Disney Cruise" width="230" height="200">
+                </div>
+                <a href="#">Read More</a>
+            </div>
+            <!-- Article 2 -->
+            <div class="article">
+                <div class="article-content">
+                    <h2>Carnival Cruise</h2>
+                    <img src="images/carnival cruise.jpg" alt="Carnival Cruise" width="230" height="200">
+                </div>
+                <a href="#">Read More</a>
+            </div>
+            <!-- Article 3 -->
+            <div class="article">
+                <div class="article-content">
+                    <h2>Oceania Cruise</h2>
+                    <img src="images/oceania cruise.jpg" alt="Oceania Cruise" width="230" height="200">
+                </div>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Toggle navItems visibility on hamburger menu click
+            $(".hamburger-menu").click(function () {
+                $(".navItems").slideToggle(); // Toggle visibility of navItems
+            });
+
+            // Show navItems in one row on larger screens when the window is resized
+            $(window).resize(function () {
+                if ($(window).width() > 768) {
+                    // Check if the window size is larger than 768px
+                    $(".navItems").css('display', ''); // Reset the style to default
+
+                    // Check if the navItems are hidden (small screen) and change to flex display for larger screens
+                    if ($(".navItems").css('display') === 'none') {
+                        $(".navItems").css('display', 'flex'); // Show navItems in one row for larger screens
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
